@@ -1,0 +1,27 @@
+name: Release check
+
+on:
+  release:
+    types: [published]
+  push:
+    tags: ["v*"]
+
+jobs:
+  version:
+    name: Tag matches manifest version
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compare tag with manifest.json and CHANGELOG.md
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          manifest=$(python3 -c "import json;print(json.load(open('custom_components/thematronic/manifest.json'))['version'])")
+          echo "tag=$tag manifest=$manifest"
+          if [ "$tag" != "$manifest" ]; then
+            echo "::error::Tag v$tag does not match manifest.json version $manifest"
+            exit 1
+          fi
+          if ! grep -q "^## \[$tag\]" CHANGELOG.md; then
+            echo "::error::CHANGELOG.md has no section for $tag"
+            exit 1
+          fi

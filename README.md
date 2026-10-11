@@ -1,5 +1,9 @@
 # Thematronic JBR-1 for Home Assistant
 
+[![Release](https://img.shields.io/github/v/release/kevinsch95/ha-thematronic)](https://github.com/kevinsch95/ha-thematronic/releases)
+[![HACS Custom](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://hacs.xyz/docs/faq/custom_repositories/)
+[![Validate](https://github.com/kevinsch95/ha-thematronic/actions/workflows/validate.yml/badge.svg)](https://github.com/kevinsch95/ha-thematronic/actions/workflows/validate.yml)
+
 A custom integration (installable through HACS) that brings the values from the
 **Thematronic JBR-1** pellet boiler controller web portal,
 [jbr1.thematronic.cz](https://jbr1.thematronic.cz/de/), into Home Assistant.
@@ -97,3 +101,16 @@ against a real portal response:
 ```bash
 python -m unittest discover -s tests -v
 ```
+
+## Versioning and releases
+
+The project follows [Semantic Versioning](https://semver.org/): `MAJOR.MINOR.PATCH`.
+Changes are listed in [CHANGELOG.md](CHANGELOG.md).
+
+To publish a release:
+
+1. Move the *Unreleased* entries in `CHANGELOG.md` under a new version heading.
+2. Set the same version in `custom_components/thematronic/manifest.json`.
+3. Commit, then create a GitHub release with the tag `vX.Y.Z`. HACS offers it
+   to users as an update; a workflow checks that the tag, manifest and
+   changelog agree.
