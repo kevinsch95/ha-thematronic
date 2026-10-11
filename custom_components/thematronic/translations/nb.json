@@ -1,0 +1,207 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Thematronic-portalkonto",
+        "description": "Logg inn med samme e-post og passord som på jbr1.thematronic.cz.",
+        "data": {
+          "username": "E-post",
+          "password": "Passord"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Logg inn på Thematronic igjen",
+        "description": "Portalen avviste den lagrede innloggingen. Skriv inn gjeldende e-post og passord.",
+        "data": {
+          "username": "E-post",
+          "password": "Passord"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Feil e-post eller passord.",
+      "cannot_connect": "Får ikke kontakt med jbr1.thematronic.cz.",
+      "unknown": "Uventet feil, se loggen."
+    },
+    "abort": {
+      "already_configured": "Denne regulatoren er allerede satt opp.",
+      "reauth_successful": "Logget inn på nytt.",
+      "wrong_account": "Denne kontoen hører til en annen regulator."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Thematronic-innstillinger",
+        "data": {
+          "scan_interval": "Oppdateringsintervall (sekunder)",
+          "raw_signals": "Legg til deaktiverte sensorer for alle rå portalsignaler"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "flue_gas_temperature": {
+        "name": "Røykgasstemperatur"
+      },
+      "boiler_flow_temperature": {
+        "name": "Kjel turtemperatur"
+      },
+      "boiler_return_temperature": {
+        "name": "Kjel returtemperatur"
+      },
+      "total_burn_time": {
+        "name": "Total brenntid"
+      },
+      "current_burn_time": {
+        "name": "Gjeldende brenntid"
+      },
+      "boiler_2_flow_temperature": {
+        "name": "Kjel 2 turtemperatur"
+      },
+      "outdoor_temperature": {
+        "name": "Utetemperatur"
+      },
+      "season_mode": {
+        "name": "Sesongmodus",
+        "state": {
+          "summer": "Sommer",
+          "winter": "Vinter"
+        }
+      },
+      "hc1_room_temperature": {
+        "name": "VK 1 romtemperatur"
+      },
+      "hc1_room_target_mode": {
+        "name": "VK 1 rom ønsket",
+        "state": {
+          "comfort": "Komfort",
+          "reduced": "Senket",
+          "stop": "Stopp",
+          "auto": "Auto",
+          "sensor": "Føler"
+        }
+      },
+      "hc1_room_target_temperature": {
+        "name": "VK 1 ønsket romtemperatur"
+      },
+      "hc1_flow_temperature": {
+        "name": "VK 1 turtemperatur"
+      },
+      "hc1_humidity": {
+        "name": "VK 1 fuktighet"
+      },
+      "hc1_blocking_difference": {
+        "name": "VK 1 sperredifferanse"
+      },
+      "hc2_room_temperature": {
+        "name": "VK 2 romtemperatur"
+      },
+      "hc2_room_target_mode": {
+        "name": "VK 2 rom ønsket",
+        "state": {
+          "comfort": "Komfort",
+          "reduced": "Senket",
+          "stop": "Stopp",
+          "auto": "Auto",
+          "sensor": "Føler"
+        }
+      },
+      "hc2_room_target_temperature": {
+        "name": "VK 2 ønsket romtemperatur"
+      },
+      "hc2_flow_temperature": {
+        "name": "VK 2 turtemperatur"
+      },
+      "hc2_humidity": {
+        "name": "VK 2 fuktighet"
+      },
+      "hc2_blocking_difference": {
+        "name": "VK 2 sperredifferanse"
+      },
+      "buffer1_top_temperature": {
+        "name": "Akkumulator 1 topp"
+      },
+      "buffer1_middle_temperature": {
+        "name": "Akkumulator 1 midt"
+      },
+      "buffer1_bottom_temperature": {
+        "name": "Akkumulator 1 bunn"
+      },
+      "buffer2_top_temperature": {
+        "name": "Akkumulator 2 topp"
+      },
+      "buffer2_middle_temperature": {
+        "name": "Akkumulator 2 midt"
+      },
+      "buffer2_bottom_temperature": {
+        "name": "Akkumulator 2 bunn"
+      },
+      "dhw_temperature": {
+        "name": "Varmtvannstemperatur"
+      },
+      "dhw_target_mode": {
+        "name": "Varmtvann ønsket",
+        "state": {
+          "stop": "Stopp",
+          "eco": "Øko",
+          "comfort": "Komfort"
+        }
+      },
+      "dhw_target_temperature": {
+        "name": "Ønsket varmtvannstemperatur"
+      },
+      "dhw_blocking_difference": {
+        "name": "Varmtvann sperredifferanse"
+      },
+      "solar_collector_temperature": {
+        "name": "Solfangertemperatur"
+      },
+      "hydraulic_schema": {
+        "name": "Hydraulisk skjema"
+      }
+    },
+    "binary_sensor": {
+      "boiler_fan": {
+        "name": "Kjel vifte"
+      },
+      "boiler_pump": {
+        "name": "Kjel pumpe"
+      },
+      "boiler_flame": {
+        "name": "Kjel flamme"
+      },
+      "boiler_fault": {
+        "name": "Kjel feil"
+      },
+      "boiler_deactivated": {
+        "name": "Kjel deaktivert"
+      },
+      "safety_limiter": {
+        "name": "Sikkerhetstermostat (STB)"
+      },
+      "boiler_2_flame": {
+        "name": "Kjel 2 varmer"
+      },
+      "hc1_pump": {
+        "name": "VK 1 pumpe"
+      },
+      "hc2_pump": {
+        "name": "VK 2 pumpe"
+      },
+      "buffer1_transfer_pump": {
+        "name": "Overføringspumpe akk. 1 → 2"
+      },
+      "buffer2_transfer_pump": {
+        "name": "Overføringspumpe akk. 2 → 1"
+      },
+      "dhw_pump": {
+        "name": "Varmtvannspumpe"
+      },
+      "solar_pump": {
+        "name": "Solpumpe"
+      }
+    }
+  }
+}

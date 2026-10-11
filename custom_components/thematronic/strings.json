@@ -1,0 +1,118 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Thematronic portal account",
+        "description": "Sign in with the same e-mail and password you use on jbr1.thematronic.cz.",
+        "data": {
+          "username": "E-mail",
+          "password": "Password"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Sign in to Thematronic again",
+        "description": "The portal rejected the stored login. Enter your current e-mail and password.",
+        "data": {
+          "username": "E-mail",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Wrong e-mail or password.",
+      "cannot_connect": "Could not reach jbr1.thematronic.cz.",
+      "unknown": "Unexpected error, see the log."
+    },
+    "abort": {
+      "already_configured": "This controller is already set up.",
+      "reauth_successful": "Signed in again.",
+      "wrong_account": "This account belongs to a different controller."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Thematronic options",
+        "data": {
+          "scan_interval": "Update interval (seconds)",
+          "raw_signals": "Add disabled sensors for every raw portal signal"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "flue_gas_temperature": { "name": "Flue gas temperature" },
+      "boiler_flow_temperature": { "name": "Boiler flow temperature" },
+      "boiler_return_temperature": { "name": "Boiler return temperature" },
+      "total_burn_time": { "name": "Total burn time" },
+      "current_burn_time": { "name": "Current burn time" },
+      "boiler_2_flow_temperature": { "name": "Boiler 2 flow temperature" },
+      "outdoor_temperature": { "name": "Outdoor temperature" },
+      "season_mode": {
+        "name": "Season mode",
+        "state": { "summer": "Summer", "winter": "Winter" }
+      },
+      "hc1_room_temperature": { "name": "HC 1 room temperature" },
+      "hc1_room_target_mode": {
+        "name": "HC 1 room target",
+        "state": {
+          "comfort": "Comfort",
+          "reduced": "Reduced",
+          "stop": "Stop",
+          "auto": "Auto",
+          "sensor": "Sensor"
+        }
+      },
+      "hc1_room_target_temperature": { "name": "HC 1 room target temperature" },
+      "hc1_flow_temperature": { "name": "HC 1 flow temperature" },
+      "hc1_humidity": { "name": "HC 1 humidity" },
+      "hc1_blocking_difference": { "name": "HC 1 blocking difference" },
+      "hc2_room_temperature": { "name": "HC 2 room temperature" },
+      "hc2_room_target_mode": {
+        "name": "HC 2 room target",
+        "state": {
+          "comfort": "Comfort",
+          "reduced": "Reduced",
+          "stop": "Stop",
+          "auto": "Auto",
+          "sensor": "Sensor"
+        }
+      },
+      "hc2_room_target_temperature": { "name": "HC 2 room target temperature" },
+      "hc2_flow_temperature": { "name": "HC 2 flow temperature" },
+      "hc2_humidity": { "name": "HC 2 humidity" },
+      "hc2_blocking_difference": { "name": "HC 2 blocking difference" },
+      "buffer1_top_temperature": { "name": "Buffer 1 top" },
+      "buffer1_middle_temperature": { "name": "Buffer 1 middle" },
+      "buffer1_bottom_temperature": { "name": "Buffer 1 bottom" },
+      "buffer2_top_temperature": { "name": "Buffer 2 top" },
+      "buffer2_middle_temperature": { "name": "Buffer 2 middle" },
+      "buffer2_bottom_temperature": { "name": "Buffer 2 bottom" },
+      "dhw_temperature": { "name": "Hot water temperature" },
+      "dhw_target_mode": {
+        "name": "Hot water target",
+        "state": { "stop": "Stop", "eco": "Eco", "comfort": "Comfort" }
+      },
+      "dhw_target_temperature": { "name": "Hot water target temperature" },
+      "dhw_blocking_difference": { "name": "Hot water blocking difference" },
+      "solar_collector_temperature": { "name": "Solar collector temperature" },
+      "hydraulic_schema": { "name": "Hydraulic schema" }
+    },
+    "binary_sensor": {
+      "boiler_fan": { "name": "Boiler fan" },
+      "boiler_pump": { "name": "Boiler pump" },
+      "boiler_flame": { "name": "Boiler flame" },
+      "boiler_fault": { "name": "Boiler fault" },
+      "boiler_deactivated": { "name": "Boiler deactivated" },
+      "safety_limiter": { "name": "Safety temperature limiter (STB)" },
+      "boiler_2_flame": { "name": "Boiler 2 heating" },
+      "hc1_pump": { "name": "HC 1 pump" },
+      "hc2_pump": { "name": "HC 2 pump" },
+      "buffer1_transfer_pump": { "name": "Buffer 1 to 2 transfer pump" },
+      "buffer2_transfer_pump": { "name": "Buffer 2 to 1 transfer pump" },
+      "dhw_pump": { "name": "Hot water pump" },
+      "solar_pump": { "name": "Solar pump" }
+    }
+  }
+}

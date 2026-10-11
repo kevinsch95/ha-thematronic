@@ -1,0 +1,207 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Thematronic-Portalkonto",
+        "description": "Melde dich mit derselben E-Mail und demselben Passwort wie auf jbr1.thematronic.cz an.",
+        "data": {
+          "username": "E-Mail",
+          "password": "Passwort"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Erneut bei Thematronic anmelden",
+        "description": "Das Portal hat die gespeicherte Anmeldung abgelehnt. Gib deine aktuelle E-Mail und dein Passwort ein.",
+        "data": {
+          "username": "E-Mail",
+          "password": "Passwort"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Falsche E-Mail oder falsches Passwort.",
+      "cannot_connect": "jbr1.thematronic.cz ist nicht erreichbar.",
+      "unknown": "Unerwarteter Fehler, siehe Protokoll."
+    },
+    "abort": {
+      "already_configured": "Dieser Regler ist bereits eingerichtet.",
+      "reauth_successful": "Erneut angemeldet.",
+      "wrong_account": "Dieses Konto gehört zu einem anderen Regler."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Thematronic-Optionen",
+        "data": {
+          "scan_interval": "Aktualisierungsintervall (Sekunden)",
+          "raw_signals": "Deaktivierte Sensoren für alle Rohsignale des Portals anlegen"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "flue_gas_temperature": {
+        "name": "Abgastemperatur"
+      },
+      "boiler_flow_temperature": {
+        "name": "Kessel Vorlauf"
+      },
+      "boiler_return_temperature": {
+        "name": "Kessel Rücklauf"
+      },
+      "total_burn_time": {
+        "name": "Gesamtbrenndauer"
+      },
+      "current_burn_time": {
+        "name": "Aktuelle Brenndauer"
+      },
+      "boiler_2_flow_temperature": {
+        "name": "Kessel 2 Vorlauf"
+      },
+      "outdoor_temperature": {
+        "name": "Außentemperatur"
+      },
+      "season_mode": {
+        "name": "Modus",
+        "state": {
+          "summer": "Sommer",
+          "winter": "Winter"
+        }
+      },
+      "hc1_room_temperature": {
+        "name": "HK 1 Raumtemperatur"
+      },
+      "hc1_room_target_mode": {
+        "name": "HK 1 Raum Soll",
+        "state": {
+          "comfort": "Komfort",
+          "reduced": "Absenkung",
+          "stop": "Stop",
+          "auto": "Auto",
+          "sensor": "Fühler"
+        }
+      },
+      "hc1_room_target_temperature": {
+        "name": "HK 1 Raum Solltemperatur"
+      },
+      "hc1_flow_temperature": {
+        "name": "HK 1 Vorlauftemperatur"
+      },
+      "hc1_humidity": {
+        "name": "HK 1 Feuchtigkeit"
+      },
+      "hc1_blocking_difference": {
+        "name": "HK 1 Sperrdifferenz"
+      },
+      "hc2_room_temperature": {
+        "name": "HK 2 Raumtemperatur"
+      },
+      "hc2_room_target_mode": {
+        "name": "HK 2 Raum Soll",
+        "state": {
+          "comfort": "Komfort",
+          "reduced": "Absenkung",
+          "stop": "Stop",
+          "auto": "Auto",
+          "sensor": "Fühler"
+        }
+      },
+      "hc2_room_target_temperature": {
+        "name": "HK 2 Raum Solltemperatur"
+      },
+      "hc2_flow_temperature": {
+        "name": "HK 2 Vorlauftemperatur"
+      },
+      "hc2_humidity": {
+        "name": "HK 2 Feuchtigkeit"
+      },
+      "hc2_blocking_difference": {
+        "name": "HK 2 Sperrdifferenz"
+      },
+      "buffer1_top_temperature": {
+        "name": "Puffer 1 oben"
+      },
+      "buffer1_middle_temperature": {
+        "name": "Puffer 1 Mitte"
+      },
+      "buffer1_bottom_temperature": {
+        "name": "Puffer 1 unten"
+      },
+      "buffer2_top_temperature": {
+        "name": "Puffer 2 oben"
+      },
+      "buffer2_middle_temperature": {
+        "name": "Puffer 2 Mitte"
+      },
+      "buffer2_bottom_temperature": {
+        "name": "Puffer 2 unten"
+      },
+      "dhw_temperature": {
+        "name": "WW Temperatur"
+      },
+      "dhw_target_mode": {
+        "name": "WW Soll",
+        "state": {
+          "stop": "Stop",
+          "eco": "Eko",
+          "comfort": "Komfort"
+        }
+      },
+      "dhw_target_temperature": {
+        "name": "WW Solltemperatur"
+      },
+      "dhw_blocking_difference": {
+        "name": "WW Sperrdifferenz"
+      },
+      "solar_collector_temperature": {
+        "name": "Kollektortemperatur"
+      },
+      "hydraulic_schema": {
+        "name": "Hydraulikschema"
+      }
+    },
+    "binary_sensor": {
+      "boiler_fan": {
+        "name": "Kessel Gebläse"
+      },
+      "boiler_pump": {
+        "name": "Kessel Pumpe"
+      },
+      "boiler_flame": {
+        "name": "Kessel Flamme"
+      },
+      "boiler_fault": {
+        "name": "Kessel Störung"
+      },
+      "boiler_deactivated": {
+        "name": "Kessel deaktiviert"
+      },
+      "safety_limiter": {
+        "name": "Sicherheitstemperaturbegrenzer (STB)"
+      },
+      "boiler_2_flame": {
+        "name": "Kessel 2 heizt"
+      },
+      "hc1_pump": {
+        "name": "HK 1 Pumpe"
+      },
+      "hc2_pump": {
+        "name": "HK 2 Pumpe"
+      },
+      "buffer1_transfer_pump": {
+        "name": "Wärmeabführung Puffer 1 → 2"
+      },
+      "buffer2_transfer_pump": {
+        "name": "Wärmerückführung Puffer 2 → 1"
+      },
+      "dhw_pump": {
+        "name": "WW Pumpe"
+      },
+      "solar_pump": {
+        "name": "Solarpumpe"
+      }
+    }
+  }
+}

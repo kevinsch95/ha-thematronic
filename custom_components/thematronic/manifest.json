@@ -1,0 +1,12 @@
+{
+  "domain": "thematronic",
+  "name": "Thematronic JBR-1",
+  "codeowners": ["@kevinsch95"],
+  "config_flow": true,
+  "documentation": "https://github.com/kevinsch95/ha-thematronic",
+  "integration_type": "device",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/kevinsch95/ha-thematronic/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}
