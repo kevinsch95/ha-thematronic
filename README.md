@@ -111,6 +111,6 @@ To publish a release:
 
 1. Move the *Unreleased* entries in `CHANGELOG.md` under a new version heading.
 2. Set the same version in `custom_components/thematronic/manifest.json`.
-3. Commit, then create a GitHub release with the tag `vX.Y.Z`. HACS offers it
-   to users as an update; a workflow checks that the tag, manifest and
-   changelog agree.
+3. Commit and push to `main`. The *Release* workflow then creates the tag
+   `vX.Y.Z` and a GitHub release with the changelog notes, and HACS offers it
+   to users as an update.

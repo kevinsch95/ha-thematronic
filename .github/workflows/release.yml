@@ -1,27 +1,65 @@
-name: Release check
+name: Release
+
+# Bump "version" in manifest.json (and add the matching CHANGELOG.md section),
+# push to main, and this workflow tags vX.Y.Z and publishes a GitHub release
+# with the changelog notes. HACS then offers it to users as an update.
 
 on:
-  release:
-    types: [published]
   push:
-    tags: ["v*"]
+    branches: [main]
+    paths:
+      - custom_components/thematronic/manifest.json
+      - CHANGELOG.md
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
-  version:
-    name: Tag matches manifest version
+  release:
+    name: Tag and release the manifest version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Compare tag with manifest.json and CHANGELOG.md
+        with:
+          fetch-depth: 0
+
+      - name: Read version
+        id: version
         run: |
-          tag="${GITHUB_REF_NAME#v}"
-          manifest=$(python3 -c "import json;print(json.load(open('custom_components/thematronic/manifest.json'))['version'])")
-          echo "tag=$tag manifest=$manifest"
-          if [ "$tag" != "$manifest" ]; then
-            echo "::error::Tag v$tag does not match manifest.json version $manifest"
-            exit 1
+          version=$(python3 -c "import json;print(json.load(open('custom_components/thematronic/manifest.json'))['version'])")
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          if git rev-parse -q --verify "refs/tags/v$version" >/dev/null; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "v$version is already released, nothing to do."
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
           fi
-          if ! grep -q "^## \[$tag\]" CHANGELOG.md; then
-            echo "::error::CHANGELOG.md has no section for $tag"
-            exit 1
-          fi
+
+      - name: Extract changelog notes
+        if: steps.version.outputs.exists == 'false'
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          python3 - <<'EOF'
+          import os, re, sys
+          version = os.environ["VERSION"]
+          text = open("CHANGELOG.md", encoding="utf-8").read()
+          match = re.search(rf"^## \[{re.escape(version)}\][^\n]*\n(.*?)(?=^## \[|^\[[^\]]+\]: |\Z)", text, re.S | re.M)
+          if not match:
+              print(f"::error::CHANGELOG.md has no section for {version}")
+              sys.exit(1)
+          open("release_notes.md", "w", encoding="utf-8").write(match.group(1).strip() + "\n")
+          EOF
+          cat release_notes.md
+
+      - name: Create tag and release
+        if: steps.version.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          gh release create "v$VERSION" \
+            --target "$GITHUB_SHA" \
+            --title "v$VERSION" \
+            --notes-file release_notes.md

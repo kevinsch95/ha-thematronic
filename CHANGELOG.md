@@ -13,8 +13,8 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 - Pellet stove icon for the integrations list (`brand/icon.png`,
   `brand/icon@2x.png`), shown by Home Assistant 2026.3 and later.
-- This changelog and a release check that the git tag matches the version in
-  `manifest.json`.
+- This changelog, and a workflow that tags and publishes a GitHub release
+  whenever the version in `manifest.json` changes.
 
 ## [0.1.0] - 2026-10-11
 
@@ -30,5 +30,5 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 - Diagnostics download with login details removed.
 
 [Unreleased]: https://github.com/kevinsch95/ha-thematronic/compare/v0.1.1...HEAD
-[0.1.1]: https://github.com/kevinsch95/ha-thematronic/compare/v0.1.0...v0.1.1
-[0.1.0]: https://github.com/kevinsch95/ha-thematronic/releases/tag/v0.1.0
+[0.1.1]: https://github.com/kevinsch95/ha-thematronic/compare/a3b5fb7...v0.1.1
+[0.1.0]: https://github.com/kevinsch95/ha-thematronic/tree/a3b5fb7
