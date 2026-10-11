@@ -33,6 +33,9 @@ appear as *unknown*.
 
 Names are available in English, German and Norwegian (Bokmål).
 
+The integration ships its own pellet-stove icon (`brand/`), shown in the
+integrations list from Home Assistant 2026.3 onwards.
+
 ## Installation
 
 ### HACS (recommended)
